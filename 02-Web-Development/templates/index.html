@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer — ATS Optimization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">⚡ AI Resume Analyzer</div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero no-print">
+            <h1>Optimize Your Resume for ATS</h1>
+            <p>Upload your resume in PDF or image format to receive instant structural analysis, ATS scoring, and targeted recommendations.</p>
+        </section>
+
+        <section class="upload-card no-print">
+            <div class="file-upload-wrapper">
+                <input type="file" id="resumeFile" accept=".pdf, .png, .jpg, .jpeg" style="display: none;">
+                <label for="resumeFile" class="choose-btn">📁 Choose Resume (PDF / Image)</label>
+                <span id="fileName" class="file-name">No file selected</span>
+            </div>
+
+            <div class="jd-box" style="margin: 20px 0; text-align: left;">
+                <label for="jobDescription" style="font-size: 0.9rem; font-weight: 600; color: #334155; display: block; margin-bottom: 6px;">
+                    Target Job Description (Optional)
+                </label>
+                <textarea 
+                    id="jobDescription" 
+                    placeholder="Paste job description or required skills to analyze alignment..."
+                ></textarea>
+            </div>
+
+            <button id="analyzeButton" class="analyze-btn">Analyze Resume</button>
+        </section>
+
+        <!-- Result Section -->
+        <section id="result" class="result-card" style="margin-bottom: 28px;">
+            <div style="text-align: center; padding: 20px; color: #64748b;">
+                <h3 style="margin-bottom: 8px; color: #1e293b;">Ready for Analysis</h3>
+                <p>Upload your resume above to generate a complete evaluation.</p>
+            </div>
+        </section>
+
+        <!-- Database History Section -->
+        <section class="upload-card no-print" style="padding: 24px; text-align: left;">
+            <h4 style="margin: 0 0 14px; color: #1e293b; font-size: 1.05rem;">🕒 Recent Scan History (Database)</h4>
+            <div id="historyList">
+                <p style="font-size: 0.85rem; color: #64748b;">No recent scans stored yet.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer no-print">
+        <p>© 2026 AI Resume Analyzer — Built for CSE Project</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
